@@ -5,6 +5,12 @@ FROM node:lts-slim
 #Crear y cambiamos al directorio /app
 WORKDIR /app
 
+#Copiar el archivo package.jason y pasckage-lock.jason a app/
+COPY -/package*.jason /app/
+
+#Instalar las de dependencias de node
+RUN npm install 
+
 #copia el contenido del proyecto a /app
 COPY . /app
 
