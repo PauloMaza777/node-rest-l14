@@ -1,16 +1,17 @@
-const http = require('http');
 
+const express = require('express');
+const app = express();
 const puerto = 80;
 
-const servidor = http.createServer(function(req, res){
+app.get('/',function(req, res){
 
     res.statusCode = 200;
     res.setHeader('content-Type', 'text/plain');
-    res.end('Hola Mundo!');
+    res.send('Hola Mundo!');
 
 });
 
-servidor.listen(puerto, function(){
+app.listen(puerto, function(){
 
     console.log('servidor iniciado')
 });
