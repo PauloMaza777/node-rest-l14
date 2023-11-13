@@ -3,6 +3,10 @@ const express = require('express');
 const app = express();
 const puerto = 80;
 
+const MenusController = require('./controllers/MenusController');
+
+app.use(express.json());
+app.get('/menus',MenusController.indexGet);
 app.get('/',function(req, res){
 
     res.statusCode = 200;
